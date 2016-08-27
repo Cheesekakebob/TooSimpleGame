@@ -1,4 +1,4 @@
-#Witty Header Commit Here
+#Witty Header Comment Here
 
 1. User has a respresentation of a character
   a. Character has health that is displayed dynamically in the UI
