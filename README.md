@@ -15,6 +15,5 @@ b. Enemy has an attack that does x damage and is displayed over Character when u
 5. Enemy default attacks on their turn
 
 6. Character and Enemy visually lose health when taking damage  
-
 a. Whenever Character reaches 0 health, reset game  
 b. When Enemy reaches 0 health, spawn new enemy
