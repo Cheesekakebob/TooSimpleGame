@@ -1,10 +1,12 @@
 
-var Character = function (name) {
-  this.characterName = name;
+var Character = function (inputname) {
+  this.name = inputname;
+  this.health = 10;
+  this.attackDmg = 2;
 };
 
 Character.prototype.sayHello = function() {
-  console.log("Hello, I'm " + this.characterName);
+  console.log("Hello, I'm " + this.name + ". I have " + this.health + " health and do " + this.attackDmg + " damage!");
 };
 
 var myCharacter = new Character("Batman");
