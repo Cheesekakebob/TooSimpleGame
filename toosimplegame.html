@@ -7,16 +7,31 @@
 <meta charset="UTF-8">
 
 <title>Too Simple Game</title>
+<script src="js/game.js"></script>
 
-<script src='js/character.js'></script>
-<script src='js/enemy.js'></script>
+<script src="js/character.js"></script>
+
+<script src="js/enemy.js"></script>
 
 </head>
 
 
 <body>
 
-Put da game here
+<div>
+<textarea id="log" rows="20" cols="100" readonly="readonly">
+Welcome to the Game!
+</textarea>
+</div>
+Character Health: <meter id="characterhealthbar" title="Character Health" style="width:100px"></meter><span id="characterhealthtext" style="position:relative;left:-70px;display:inline-block;width:20px">??/??</span>
+Enemy Health: <meter id="enemyhealthbar" title="Enemy Health" style="width:100px"></meter><span id="enemyhealthtext" style="position:relative;left:-60px;display:inline-block;width:20px">??/??</span>
+<button type="button" onclick="myCharacter.attack(myEnemy)">Attack</button>
+<br>
+Character Deaths: <span id="characterdeathstext">0</span>
+<br>
+Enemy Deaths: <span id="enemydeathstext">0</span>
+
+<script>initialize();</script>
 
 </body>
 
