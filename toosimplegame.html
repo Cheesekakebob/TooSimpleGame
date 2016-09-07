@@ -17,11 +17,22 @@ Welcome to the Game!
 </div>
 Hero Health: <meter id="herohealthbar" title="Hero Health" style="width:100px"></meter><span id="herohealthtext" style="position:relative;left:-70px;display:inline-block;width:20px">??/??</span>
 Enemy Health: <meter id="enemyhealthbar" title="Enemy Health" style="width:100px"></meter><span id="enemyhealthtext" style="position:relative;left:-60px;display:inline-block;width:20px">??/??</span>
+Target: [<span id="enemynametext">?</span>] 
 <button type="button" onclick="myHero.attack(myEnemy)">Attack</button>
+<button type="button" onclick="myHero.healMe(myHero.healAmount)">Heal Me</button>
 <br>
 Hero Deaths: <span id="herodeathstext">0</span>
 <br>
-Enemy Deaths: <span id="enemydeathstext">0</span>
+Hero Kills: <span id="enemydeathstext">0</span>
+<br>
+<br>
+Hero Attack Damage: <span id="herodamagetext">?</span>
+<br>
+Hero Heal Amount: <span id="herohealtext">?</span>
+<br>
+Hero Crit Chance: <span id="herocrittext">?</span>% (double damage)
+<br>
+Hero Dodge Chance: <span id="herododgetext">?</span>%
 
 <script>initialize();</script>
 
