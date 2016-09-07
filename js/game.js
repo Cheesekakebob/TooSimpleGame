@@ -3,24 +3,17 @@ function initialize() {
   log = document.getElementById("log");
   logMessage("Initializing...");
 
-  myCharacter = new Character("Batman");
-
-  myCharacter.sayHello();
-
-
-  myEnemy = new Enemy("Joker");
-
+  myHero.sayHello();
   myEnemy.sayHello();
 
-
-  characterHealthbar = document.getElementById("characterhealthbar");
-  characterHealthbar.value = myCharacter.maxHealth;
-  characterHealthbar.max = myCharacter.maxHealth;
-  characterHealthbar.optimum = myCharacter.maxHealth;
-  characterHealthbar.low = (myCharacter.maxHealth * 0.3);
-  characterHealthText = document.getElementById("characterhealthtext");
-  characterHealthText.innerText = myCharacter.maxHealth + "/" + myCharacter.maxHealth;
-  characterDeathsText = document.getElementById("characterdeathstext");
+  heroHealthbar = document.getElementById("herohealthbar");
+  heroHealthbar.value = myHero.maxHealth;
+  heroHealthbar.max = myHero.maxHealth;
+  heroHealthbar.optimum = myHero.maxHealth;
+  heroHealthbar.low = (myHero.maxHealth * 0.3);
+  heroHealthText = document.getElementById("herohealthtext");
+  heroHealthText.innerText = myHero.maxHealth + "/" + myHero.maxHealth;
+  heroDeathsText = document.getElementById("herodeathstext");
 
   enemyHealthbar = document.getElementById("enemyhealthbar");
   enemyHealthbar.value = myEnemy.maxHealth;
