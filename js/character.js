@@ -25,7 +25,7 @@ myEnemy.expvalue = 2;
 
 myHero.gainExperience = function(exp) {
   this.experience += exp;
-  logMessage("Gained experience: " + exp);
+  logMessage("Game Message: Gained " + exp + " experience!");
   if (this.experience >= 10) {
     if (this.critChance < 100) {
       logMessage("Leveled Up! Stats increased!");
