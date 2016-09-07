@@ -6,7 +6,8 @@ var Character = function (type, inputname, maxhp, atkdmg) {
   this.currentHealth = this.maxHealth;
   this.attackDmg = atkdmg;
   this.deaths = 0;
-  this.takeDamage = function() {console.log("Error, base class!");};
+  this.takeDamage = function() {console.log("Error, base class call to takeDamage!");};
+  this.attack = function() {console.log("Error, base class call to attack!");};
 };
 
 
