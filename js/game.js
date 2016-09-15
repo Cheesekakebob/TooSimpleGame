@@ -2,6 +2,8 @@
 function initialize() {
   log = document.getElementById("log");
   logMessage("Initializing...");
+  
+  attackButton = document.getElementById("attackbutton");
 
   myHero.sayHello();
   myEnemy.sayHello();

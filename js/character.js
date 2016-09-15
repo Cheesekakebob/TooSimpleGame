@@ -57,16 +57,40 @@ myHero.takeDamage = function(damage) {
 };
 
 myHero.attack = function(target) {
+  myHero.attackAnim();
   hit = this.hitRoll(myEnemy.dodgeChance);
   if (hit) {
     dmg = this.attackDmg*this.critRoll(this.critChance);
     logMessage("Hero: Attack made for " + dmg + " damage against " + target.name + "!");
     killed = myEnemy.takeDamage(dmg);
-    (!killed) ? myEnemy.attack(myHero):myHero.gainExperience(myEnemy.expvalue);
+    (!killed) ? setTimeout(function() {myEnemy.attack(myHero);}, 2000):myHero.gainExperience(myEnemy.expvalue);
   } else {
     logMessage("Hero: Attacked but " + myEnemy.name + " dodged!");
-	myEnemy.attack(myHero)
+	setTimeout(function() {myEnemy.attack(myHero);}, 2000);
   }
+};
+
+myHero.attackAnim = function() {
+    attackButton.disabled = true;
+    var elem = document.getElementById("heropic"); 
+    var pos = 94;
+	var reachedEnd = false;
+    var id = setInterval(frame, 1);
+    function frame() {
+        if (pos == 320) {
+		    reachedEnd = true;
+        } 
+		if (pos == 95 && reachedEnd) {
+            attackButton.disabled = false;
+		    clearInterval(id);
+		}
+		if (!reachedEnd) {
+            pos++; 
+        } else {
+		    pos--;
+		}
+        elem.style.left = pos + 'px'; 
+    }
 };
 
 myEnemy.takeDamage = function(damage) {
@@ -83,6 +107,7 @@ myEnemy.takeDamage = function(damage) {
 };
 
 myEnemy.attack = function(target) {
+  myEnemy.attackAnim();
   hit = this.hitRoll(myHero.dodgeChance);
   if (hit) {
     logMessage(myEnemy.name + ": Attack made for " + this.attackDmg + " damage against " + target.name + "!");
@@ -90,4 +115,27 @@ myEnemy.attack = function(target) {
   } else {
     logMessage(myEnemy.name + ": Attacked but " + myHero.name + " dodged!");
   }
+};
+
+myEnemy.attackAnim = function() {
+    attackButton.disabled = true;
+    var elem = document.getElementById("enemypic"); 
+    var pos = 320;
+	var reachedEnd = false;
+    var id = setInterval(frame, 1);
+    function frame() {
+        if (pos == 120) {
+		    reachedEnd = true;
+        } 
+		if (pos == 319 && reachedEnd) {
+		    attackButton.disabled = false;
+		    clearInterval(id);
+		}
+		if (!reachedEnd) {
+            pos--; 
+        } else {
+		    pos++;
+		}
+        elem.style.left = pos + 'px'; 
+    }
 };
